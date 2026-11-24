@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valentina Schechter</title>
+<meta name="description" content="Portfolio van Valentina Schechter: grafisch ontwerp, illustratie, fotobewerking, motion en UX/UI.">
+<style>
+@font-face{font-family:"Archivo";src:url(assets/fonts/archivo-latin-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap;unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Archivo";src:url(assets/fonts/archivo-latin-ext-standard-normal.woff2) format("woff2");font-weight:100 900;font-stretch:62% 125%;font-display:swap;unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Caveat";src:url(assets/fonts/caveat-latin-700-normal.woff2) format("woff2");font-weight:700;font-display:swap}
+/* VOICE  occasion: een jonge ontwerper die zich voorstelt, speels en zelfzeker
+   IDEA   een posterwand in een atelier: eigen posters, collages en inktschetsen, opgeplakt met tape
+   PICTURE een collage van haar eigen werk + haar eigen lijntekeningen van gezichten als krabbels
+   COLOUR tomatenrood (uit haar contrastposter) domineert, kobaltblauw steunt, mosterdgeel als accent, wit papier
+   TYPE   Archivo in smal-zwart voor titels zoals haar posterletters, Archivo voor tekst, Caveat voor handgeschreven notities
+   LAYOUT laptop: naam groot over de rode band, collage rechts ervan uitlopend; telefoon: naam, collage, tekst onder elkaar */
+:root{color-scheme:light dark;
+--bg:light-dark(#ffffff,#141113);--ink:light-dark(#17120f,#f6efe8);--soft:light-dark(#5b524c,#c9bfb6);
+--card:light-dark(#ffffff,#1e1a1d);--line:light-dark(#e6dfd8,#332c30);
+--red:#e8432e;--red2:#c8301e;--blue:#2b2fc0;--yellow:#f6c543;--pink:#f28db2;--paper:light-dark(#f7f3ee,#1b1719)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Archivo",system-ui,sans-serif;overflow-x:clip}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+.band{padding-block:clamp(40px,6vw,96px);padding-inline:max(5vw,16px)}
+.wrap{max-width:1240px;margin:0 auto}
+.disp{font-family:"Archivo",Impact,sans-serif;font-stretch:62%;font-weight:900;line-height:.9;letter-spacing:-.01em;word-spacing:.12em;text-transform:uppercase;margin:0}
+.hand{font-family:"Caveat",cursive;font-weight:700}
+h2.disp{font-size:clamp(44px,7vw,88px)}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:var(--red);color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px max(5vw,16px)}
+nav .logo{font-family:"Caveat",cursive;font-size:30px;font-weight:700;text-decoration:none;line-height:1}
+nav ul{list-style:none;display:flex;gap:4px;margin:0;padding:0;flex-wrap:wrap}
+nav ul a{display:inline-block;text-decoration:none;font-weight:700;font-stretch:80%;text-transform:uppercase;letter-spacing:.02em;padding:10px 12px;border-radius:99px}
+nav ul a:hover,nav ul a:focus-visible{background:#fff;color:var(--red);outline:none}
+/* hero */
+.hero{background:var(--red);color:#fff;position:relative;overflow:hidden;padding-top:clamp(24px,4vw,56px);padding-bottom:0}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(16px,3vw,40px);align-items:end}
+.name{font-size:clamp(64px,10.4vw,152px);color:#fff}
+.name span{display:block}
+.name .s2{color:var(--yellow)}
+.intro{max-width:34em;font-size:clamp(17px,1.5vw,19px);margin:22px 0 10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 28px;padding:0;list-style:none}
+.tags li{background:#fff;color:var(--ink);font-weight:700;font-size:14px;padding:6px 12px;border-radius:99px;white-space:nowrap}
+.tags li:nth-child(2){background:var(--yellow)}
+.tags li:nth-child(3){background:var(--blue);color:#fff}
+.tags li:nth-child(4){background:#17120f;color:#fff}
+.cta{display:flex;gap:10px;flex-wrap:wrap;padding-bottom:clamp(32px,5vw,64px)}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 22px;border-radius:99px;font-weight:800;font-stretch:85%;text-transform:uppercase;letter-spacing:.02em;text-decoration:none;border:2px solid currentColor;transition:transform .15s}
+.btn:hover{transform:translateY(-2px) rotate(-1deg)}
+.btn.solid{background:#fff;color:var(--red);border-color:#fff}
+.collage{position:relative;height:clamp(420px,46vw,620px)}
+.pin{position:absolute;margin:0;background:#fff;padding:7px;box-shadow:0 10px 24px rgba(40,6,0,.28);transition:transform .25s}
+.pin img{width:100%;height:100%;object-fit:cover}
+.pin::before{content:"";position:absolute;top:-12px;left:50%;width:70px;height:24px;transform:translateX(-50%) rotate(-4deg);background:rgba(246,197,67,.85)}
+.pin:hover{transform:rotate(0) scale(1.03)!important;z-index:9}
+.p1{width:44%;aspect-ratio:1132/1600;left:2%;top:6%;transform:rotate(-6deg);z-index:3}
+.p2{width:38%;aspect-ratio:1132/1600;left:40%;top:0;transform:rotate(4deg);z-index:2}
+.p3{width:34%;aspect-ratio:1132/1600;right:-4%;top:34%;transform:rotate(-3deg);z-index:4}
+.p4{width:36%;aspect-ratio:1132/1600;left:24%;top:46%;transform:rotate(7deg);z-index:5}
+.cut{position:absolute;width:30%;left:-4%;bottom:-2%;z-index:6;transform:rotate(-8deg)}
+.doodle{position:absolute;pointer-events:none;filter:invert(1);opacity:.95}
+.hero .d1{width:min(210px,24vw);right:2%;top:-10px;z-index:7}
+.note{position:absolute;z-index:8;background:var(--yellow);color:var(--ink);font-size:24px;line-height:1.05;padding:10px 14px 12px;transform:rotate(5deg);box-shadow:0 6px 14px rgba(0,0,0,.2);right:30%;bottom:8%}
+/* marquee */
+.tape{background:var(--yellow);color:var(--ink);overflow:hidden;border-block:3px solid var(--ink)}
+.tape div{display:flex;gap:28px;width:max-content;padding:12px 0;animation:roll 38s linear infinite}
+.tape span{font-family:"Archivo";font-stretch:62%;font-weight:900;font-size:28px;text-transform:uppercase;white-space:nowrap}
+.tape span:nth-child(even){color:var(--red)}
+@keyframes roll{to{transform:translateX(-50%)}}
+/* work */
+.head{display:flex;justify-content:space-between;align-items:end;gap:16px 32px;flex-wrap:wrap;margin-bottom:28px}
+.head p{max-width:30em;margin:0;color:var(--soft)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 28px;padding:0;list-style:none}
+.filters button{font:700 15px "Archivo";min-height:44px;padding:0 18px;border-radius:99px;border:2px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.filters button:hover{background:color-mix(in srgb,var(--yellow) 60%,transparent)}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+.filters button:focus-visible,.card:focus-visible,.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.grid{columns:3 300px;column-gap:22px}
+.card{break-inside:avoid;margin:0 0 26px;display:block;width:100%;text-align:left;background:none;border:0;padding:0;color:inherit;font:inherit;cursor:pointer}
+.card .img{position:relative;overflow:hidden;border-radius:6px;background:var(--paper)}
+.card img,.card video{width:100%;height:auto;transition:transform .4s}
+.card:hover img,.card:hover video{transform:scale(1.035)}
+.card .n{position:absolute;top:10px;right:10px;background:var(--bg);color:var(--ink);font-size:13px;font-weight:700;padding:3px 10px;border-radius:99px}
+.card .play{position:absolute;left:10px;bottom:10px;background:var(--red);color:#fff;font-size:13px;font-weight:800;padding:4px 10px 4px 8px;border-radius:99px}
+.card h3{font-stretch:75%;font-weight:850;word-spacing:.1em;font-size:22px;line-height:1.1;margin:12px 0 2px;text-transform:uppercase}
+.card .meta{color:var(--soft);font-size:14px}
+.card[hidden]{display:none}
+/* lightbox */
+dialog{border:0;padding:0;width:min(1180px,96vw);max-height:94vh;background:var(--bg);color:var(--ink);border-radius:10px;overflow:auto}
+dialog::backdrop{background:rgba(20,8,6,.78)}
+.lb{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}
+.slides{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;background:var(--paper);scrollbar-width:none}
+.slides::-webkit-scrollbar{display:none}
+.slides{--sh:min(78vh,760px)}
+.slides>*{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:18px;height:var(--sh)}
+.slides img,.slides video{max-height:calc(var(--sh) - 36px);width:auto;height:auto;max-width:100%;object-fit:contain;box-shadow:0 6px 18px rgba(0,0,0,.15)}
+.side{padding:28px 26px;display:flex;flex-direction:column;gap:14px}
+.side h3{font-size:clamp(34px,4vw,48px)}
+.side .cat{display:inline-block;background:var(--yellow);color:#17120f;font-weight:700;font-size:14px;padding:3px 12px;border-radius:99px;align-self:flex-start}
+.side dl{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;margin:0;font-size:15px}
+.side dt{color:var(--soft)}
+.side dd{margin:0}
+.btn.live{align-self:flex-start;background:var(--red);border-color:var(--red);color:#fff}
+.btn.live[hidden]{display:none}
+.ctrl{display:flex;gap:8px;align-items:center;margin-top:auto;padding-top:10px}
+.ctrl button{font:800 20px "Archivo";width:48px;height:48px;border-radius:99px;border:2px solid var(--ink);background:var(--bg);color:var(--ink);cursor:pointer}
+.ctrl button:hover{background:var(--yellow);color:#17120f}
+.ctrl .cnt{font-weight:700;margin-left:4px}
+.ctrl .x{margin-left:auto;background:var(--ink);color:var(--bg)}
+/* about */
+.about{background:var(--paper)}
+.about .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(24px,5vw,72px);align-items:start}
+.portrait{position:relative;background:var(--red);border-radius:8px;aspect-ratio:4/5;overflow:hidden}
+.portrait img.me{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.portrait img.f{position:absolute;width:34%;left:4%;bottom:3%;filter:invert(1);opacity:.9}
+.portrait .ph{position:absolute;left:16px;right:16px;bottom:14px;color:#fff;font-size:24px;line-height:1.1}
+.portrait .sticker{position:absolute;top:18px;right:-6px;background:var(--yellow);color:#17120f;font-weight:900;font-stretch:62%;text-transform:uppercase;font-size:26px;padding:6px 16px;transform:rotate(6deg)}
+.about p{font-size:18px;max-width:36em}
+.values{display:flex;flex-wrap:wrap;gap:10px;padding:0;margin:22px 0;list-style:none}
+.values li{font-weight:900;font-stretch:62%;text-transform:uppercase;font-size:26px;padding:4px 16px;border:2.5px solid var(--ink);border-radius:99px}
+.values li:nth-child(1){background:var(--red);color:#fff;border-color:var(--red);transform:rotate(-3deg)}
+.values li:nth-child(3){background:var(--blue);color:#fff;border-color:var(--blue);transform:rotate(2deg)}
+.values li:nth-child(5){background:var(--yellow);color:#17120f;border-color:var(--yellow);transform:rotate(-2deg)}
+.free{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:8px}
+.free div{background:var(--bg);border-radius:8px;padding:14px 16px;border:1px solid var(--line)}
+.free b{display:block;font-stretch:80%;text-transform:uppercase;font-size:16px}
+.free span{color:var(--soft);font-size:15px}
+/* cv */
+.cv{background:var(--blue);color:#fff;position:relative;overflow:hidden}
+.cv .grid2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,40px);margin-top:28px}
+.cv h3{font-stretch:70%;font-weight:900;text-transform:uppercase;font-size:24px;margin:0 0 10px;color:var(--yellow)}
+.cv ul{list-style:none;margin:0;padding:0}
+.cv li{padding:9px 0;border-top:1px solid rgba(255,255,255,.25)}
+.cv li small{display:block;opacity:.8;font-size:14px}
+.cv .chips{display:flex;flex-wrap:wrap;gap:8px}
+.cv .chips li{border:2px solid #fff;border-radius:99px;padding:5px 12px;font-weight:700;font-size:15px}
+.cv .sk{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.st{color:var(--yellow);letter-spacing:.12em;font-size:18px;white-space:nowrap;line-height:1}
+.st i{font-style:normal;color:rgba(255,255,255,.28)}
+.cv .sk.big{font-weight:800;font-stretch:80%;text-transform:uppercase}
+.links a{font-weight:700;text-decoration-thickness:2px;text-underline-offset:3px;overflow-wrap:anywhere}
+.ph-t{background:rgba(246,197,67,.28);border-bottom:2px dashed var(--yellow);padding:0 4px;border-radius:3px}
+.cv .btn{color:#fff}
+.cv .btn.solid{background:var(--yellow);border-color:var(--yellow);color:#17120f}
+.cv .d2{width:170px;left:calc(max(5vw,16px) + 130px);top:clamp(30px,4vw,60px);opacity:.9}
+/* contact */
+.contact{background:var(--yellow);color:#17120f}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:32px;align-items:center}
+.contact h2{font-size:clamp(52px,9vw,128px)}
+.links{list-style:none;margin:0;padding:0}
+.links li{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:14px 0;border-top:2.5px solid #17120f;font-size:18px}
+.links li b{font-stretch:75%;text-transform:uppercase}
+.links .ph-t{background:rgba(255,255,255,.55);border-color:#17120f}
+footer{background:#17120f;color:#f6efe8;padding:22px max(5vw,16px);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+@media(max-width:900px){
+.hero .wrap{grid-template-columns:minmax(0,1fr);gap:0}
+.hero .wrap>div:first-child{display:contents}
+.name{order:1}.collage{order:2}.intro{order:3}.tags{order:4}.cta{order:5}
+.cv .d2{display:none}
+.collage{height:clamp(340px,88vw,560px);margin:22px 0 8px;max-width:640px;width:100%;justify-self:center}
+.about .wrap{grid-template-columns:minmax(0,1fr)}
+.portrait{max-width:440px;width:100%}
+
+.cv .grid2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lb{grid-template-columns:minmax(0,1fr)}
+.slides{--sh:min(58vh,560px)}
+.contact .wrap{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:600px){
+nav ul a{padding:8px 9px;font-size:14px}
+.cv .grid2,.free{grid-template-columns:minmax(0,1fr)}
+.grid{columns:2;column-gap:12px}
+.card{margin-bottom:20px}
+.card h3{font-size:17px}
+.card .meta{font-size:13px}
+.card .n{font-size:12px;padding:2px 8px;top:6px;right:6px}
+.note{font-size:20px;right:4%;bottom:4%}
+.hero .d1{display:none}
+.side{padding:20px 18px}}
+@media(prefers-reduced-motion:reduce){.tape div{animation:none}html{scroll-behavior:auto}.btn,.pin,.card img{transition:none}}
+@media print{nav,.tape{display:none}}
+</style>
+</head>
+<body>
+<nav aria-label="Hoofdmenu">
+  <a class="logo" href="#top">valentina</a>
+  <ul>
+    <li><a href="#werk">Werk</a></li>
+    <li><a href="#over">Over mij</a></li>
+    <li><a href="#cv">CV</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<header class="band hero" id="top">
+  <div class="wrap">
+    <div>
+      <h1 class="disp name"><span>Valentina</span><span class="s2">Schechter</span></h1>
+      <p class="intro">Ik ben Valentina, 21 jaar en student in het graduaat Digitale Vormgeving. Ik maak posters, illustraties, collages, animaties en websites, en ik zoek graag uit wat er allemaal kan met de nieuwste AI-tools.</p>
+      <ul class="tags"><li>Grafisch ontwerp</li><li>Illustratie &amp; animatie</li><li>Fotobewerking</li><li>Webdesign</li></ul>
+      <div class="cta"><a class="btn solid" href="#werk">Bekijk mijn werk</a><a class="btn" href="#cv">Mijn cv</a></div>
+    </div>
+    <div class="collage" aria-hidden="true">
+      <figure class="pin p1"><img src="assets/thumb/contrastposter-3.jpg" alt=""></figure>
+      <figure class="pin p2"><img src="assets/thumb/eiland-3.jpg" alt=""></figure>
+      <figure class="pin p3"><img src="assets/thumb/portret-rood.jpg" alt=""></figure>
+      <figure class="pin p4"><img src="assets/thumb/museumnacht-1.jpg" alt=""></figure>
+      <img class="cut" src="assets/thumb/newyork.jpg" alt="" style="mix-blend-mode:multiply">
+      <img class="doodle d1" src="assets/img/doodle-1.png" alt="">
+      <div class="note hand">vers uit<br>het atelier!</div>
+    </div>
+  </div>
+</header>
+
+<div class="tape" aria-hidden="true"><div>
+  <span>Posters</span><span>Illustratie</span><span>Collage</span><span>Animatie</span><span>Logo's</span><span>Fotobewerking</span><span>Editorial</span><span>Webdesign</span><span>UX/UI</span><span>AI</span>
+  <span>Posters</span><span>Illustratie</span><span>Collage</span><span>Animatie</span><span>Logo's</span><span>Fotobewerking</span><span>Editorial</span><span>Webdesign</span><span>UX/UI</span><span>AI</span>
+</div></div>
+
+<main>
+<section class="band" id="werk" aria-labelledby="werk-t">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="disp" id="werk-t">Werk</h2>
+      <p>Een selectie uit mijn graduaat Digitale Vormgeving en eigen projecten: van inkttekening en poster tot een volledige website. Klik op een project om alle beelden te zien.</p>
+    </div>
+    <ul class="filters" id="filters"></ul>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section class="band about" id="over" aria-labelledby="over-t">
+  <div class="wrap">
+    <div class="portrait">
+      <img class="me" src="assets/img/valentina.jpg" alt="Valentina Schechter">
+      <div class="sticker">Hoi!</div>
+    </div>
+    <div>
+      <h2 class="disp" id="over-t">Over mij</h2>
+      <p>Tekenen, schilderen, animeren: als ik vrije tijd heb, ben ik iets aan het maken. Al op jonge leeftijd ben ik via games de online wereld in gedoken, en sindsdien laat die me niet meer los. Films, series en games zijn nog altijd mijn grootste inspiratiebron, en ik vind het heerlijk om ze op mijn eigen manier te verbeelden.</p>
+      <p>Ik volg op de voet wat AI vandaag kan en werk er ook graag mee samen. Ik wil vooral blijven groeien: nieuwe technieken leren en ze meteen toepassen in mijn werk. Later zie ik mezelf als digitaal grafisch ontwerper in een team waar ik posters, logo's en promovideo's maak.</p>
+      <ul class="values" aria-label="Mijn kernwaarden"><li>Creativiteit</li><li>Betrokkenheid</li><li>Passie</li><li>Kennis</li><li>Humor</li></ul>
+      <div class="free">
+        <div><b>Tekenen &amp; schilderen</b><span>schetsboek altijd bij de hand</span></div>
+        <div><b>Games</b><span>mijn ingang tot de digitale wereld</span></div>
+        <div><b>Films &amp; series</b><span>kijken, bespreken, verbeelden</span></div>
+        <div><b>Softball</b><span>teamspeler, ooit MVP van het seizoen</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band cv" id="cv" aria-labelledby="cv-t">
+  <img class="doodle d2" src="assets/img/doodle-2.png" alt="">
+  <div class="wrap">
+    <div class="head">
+      <h2 class="disp" id="cv-t">CV</h2>
+      <div class="cta" style="padding:0"><a class="btn solid" href="cv-valentina-schechter.pdf" target="_blank" rel="noopener">Download cv (PDF)</a><a class="btn" href="cv.html" target="_blank" rel="noopener">Bekijk cv</a></div>
+    </div>
+    <div class="grid2">
+      <div>
+        <h3>Opleiding</h3>
+        <ul>
+          <li><b>Graduaat Digitale Vormgeving</b><small>AP Hogeschool Antwerpen · 2025 – heden</small></li>
+          <li><b>Beeldende Vorming</b><small>de!Kunsthumaniora Antwerpen · 5de – 6de middelbaar · 2021 – 2023 · diploma</small></li>
+          <li><b>Moderne Wetenschappen-Talen</b><small>1ste – 4de middelbaar · 2017 – 2021</small></li>
+        </ul>
+        <h3 style="margin-top:24px">Ervaring</h3>
+        <ul>
+          <li><b>Studentenjob · Delhaize</b><small>3 jaar · kassa, klantvriendelijkheid, flexibel, teamwerk, stressbestendig, shiften</small></li>
+          <li><b>Studentenjob · Kinepolis Antwerpen</b><small>1 jaar · klantvriendelijkheid, teamwerk, stressbestendig, werken volgens schema, shiften</small></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Programma's</h3>
+        <ul>
+          <li class="sk"><span>After Effects</span><span class="st" role="img" aria-label="4 van 5">★★★★<i>★</i></span></li>
+          <li class="sk"><span>Photoshop</span><span class="st" role="img" aria-label="3 van 5">★★★<i>★★</i></span></li>
+          <li class="sk"><span>Illustrator</span><span class="st" role="img" aria-label="3 van 5">★★★<i>★★</i></span></li>
+          <li class="sk"><span>HTML &amp; CSS</span><span class="st" role="img" aria-label="3 van 5">★★★<i>★★</i></span></li>
+          <li class="sk"><span>Vibecoden</span><span class="st" role="img" aria-label="3 van 5">★★★<i>★★</i></span></li>
+          <li class="sk"><span>InDesign</span><span class="st" role="img" aria-label="2 van 5">★★<i>★★★</i></span></li>
+          <li class="sk big"><span>Groeivermogen</span><span class="st" role="img" aria-label="5 van 5">★★★★★</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Persoonlijk</h3>
+        <ul>
+          <li>Geboren op 1 juni 2005</li>
+          <li>Woont in Antwerpen</li>
+          <li><a href="mailto:valentina.schechter@gmail.com">valentina.schechter@gmail.com</a></li>
+        </ul>
+        <h3 style="margin-top:24px">Talen</h3>
+        <ul>
+          <li class="sk"><span>Nederlands</span><span class="st" role="img" aria-label="5 van 5">★★★★★</span></li>
+          <li class="sk"><span>Engels</span><span class="st" role="img" aria-label="5 van 5">★★★★★</span></li>
+          <li class="sk"><span>Spaans</span><span class="st" role="img" aria-label="3 van 5">★★★<i>★★</i></span></li>
+          <li class="sk"><span>Frans</span><span class="st" role="img" aria-label="2 van 5">★★<i>★★★</i></span></li>
+        </ul>
+        <h3 style="margin-top:24px">Sterktes</h3>
+        <ul class="chips"><li>Harde werker</li><li>Leert snel</li><li>Zelfstandig</li><li>Betrouwbaar</li><li>Geduldig</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact" aria-labelledby="contact-t">
+  <div class="wrap">
+    <h2 class="disp" id="contact-t">Laten we iets maken</h2>
+    <ul class="links">
+      <li><b>E-mail</b><a href="mailto:valentina.schechter@gmail.com">valentina.schechter@gmail.com</a></li>
+      <li><b>Woonplaats</b><span>Antwerpen</span></li>
+    </ul>
+  </div>
+</section>
+</main>
+<footer><span>© 2026 Valentina Schechter</span><span>Antwerpen</span></footer>
+
+<dialog id="lb" aria-labelledby="lb-t">
+  <div class="lb">
+    <div class="slides" id="slides" tabindex="0" aria-label="Beelden van het project"></div>
+    <div class="side">
+      <span class="cat" id="lb-c"></span>
+      <h3 class="disp" id="lb-t"></h3>
+      <p id="lb-d" style="margin:0"></p>
+      <dl id="lb-m"></dl>
+      <a class="btn live" id="lb-l" href="#" target="_blank" rel="noopener" hidden>Bekijk de live website ↗</a>
+      <div class="ctrl"><button id="prev" aria-label="Vorige beeld">←</button><button id="next" aria-label="Volgende beeld">→</button><span class="cnt" id="cnt"></span><button class="x" id="close" aria-label="Sluiten">✕</button></div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+{
+const P=[
+{id:"naam",t:"Valentina Schechter",c:"Grafisch ontwerp",v:"Design Skills · Contrast",tools:"Illustrator, Photoshop",img:["contrastposter-3","contrastposter-1","contrastposter-2"],d:"Drie posters over mezelf. Mijn naam en een reeks kernwoorden botsen met collages van paarden, bloemen en gezichten: contrast in kleur, schaal en beeld, zonder dat het uit elkaar valt."},
+{id:"static",t:"STATIC®",c:"Webdesign",v:"Eigen project · Website",tools:"HTML, CSS, GitHub Pages",url:"https://valentinaschechter.github.io/Webs/",img:["webs-mockup","webs-schetsen","webs-kleuren","webs-collectie","webs-lookbook","webs-moodboard","webs-verhaal"],d:"Een website voor een fictief, onafhankelijk streetwearmerk. Het logo ontstond als handgeschreven signatuur in mijn schetsboek. Op de site kies je een kleur die meteen de hele pagina van kleur verandert, en er zijn een collectie, een lookbook en een merkverhaal. Ik heb de site zelf gebouwd en online gezet met GitHub Pages, en hij werkt ook op je telefoon."},
+{id:"solipsism",t:"Solipsism",c:"Fotobewerking",v:"Software Photo · Collage",tools:"Photoshop",img:["solipsism"],d:"Een filmische posterscollage in warm, korrelig licht. Meerdere foto's versmolten tot één sfeerbeeld, met de titel als lichtgevende letters in de scène."},
+{id:"image-to-text",t:"Image to text",c:"Grafisch ontwerp",v:"Design Skills · Typografie & beeld",tools:"Illustrator",img:["masereel-1","masereel-2","masereel-3","masereel-4","masereel-5"],d:"Vijf posters over Belgische beeldmakers: Frans Masereel, Wendy Scheerlinck, Jonas De Vacht, Jonas Nachtergaele en Kristof Devos. Bij elke poster volgt de typografie het karakter van hun werk, van houtsnede tot speelse vormen."},
+{id:"portret",t:"Portret in rood",c:"Illustratie",v:"Design Skills · Kleur",tools:"Photoshop",img:["portret-rood"],d:"Een digitaal geschilderd portret in één kleurfamilie. Alleen met tinten rood en bordeaux licht, schaduw en emotie opbouwen."},
+{id:"ap",t:"Infodag AP",c:"Grafisch ontwerp",v:"Studio 1 · Campagne",tools:"Photoshop, InDesign, After Effects",img:["ap-poster","ap-carrousel","v:ap-animatie"],d:"Campagne voor de infodag van AP Hogeschool binnen de bestaande huisstijl: een affiche, een Instagram-carrousel en een korte animatie voor sociale media."},
+{id:"eiland",t:"Eiland",c:"Illustratie",v:"Design Skills · Kleur & patroon",tools:"Illustrator",img:["eiland-3","eiland-1","eiland-2"],d:"Affiche voor een theatervoorstelling voor kinderen van 8 tot 12 jaar. Het ronde patroon werkte ik uit in drie kleurwegen om te zien hoe kleur de sfeer verandert."},
+{id:"honingvogel",t:"Honingvogel",c:"Fotobewerking",v:"Software Photo · Samengesteld dier",tools:"Photoshop",img:["samengesteld-dier"],d:"Een vogel die in een plas honing opgaat. Selecteren, maskeren en lichtval op elkaar afstemmen tot het één geloofwaardig, vreemd beeld wordt."},
+{id:"logos",t:"Logo's met eenheid",c:"Grafisch ontwerp",v:"Design Skills · Eenheid",tools:"Illustrator",img:["logo-1","logo-2","logo-3"],d:"Drie fictieve merken: Hexacore, Maison Cœur en Grid & Garden. Telkens een woordmerk met een set iconen die als één familie moeten aanvoelen."},
+{id:"newyork",t:"New York",c:"Fotobewerking",v:"Software Photo · Selecties",tools:"Photoshop",img:["newyork"],d:"Een uitgeknipte stad: wolkenkrabbers, het Vrijheidsbeeld, een gele taxi en een duif samen in één compacte collage."},
+{id:"gezichten",t:"Punten en lijnen",c:"Illustratie",v:"Design Skills · Punt, lijn, vlak",tools:"Inkt op papier",img:["gezichten-1","gezichten-2","gezichten-3"],d:"Snelle inkttekeningen van gezichten, alleen met punten, lijnen en arcering. Deze krabbels zie je ook terug als versiering op deze site."},
+{id:"motion",t:"Motion-oefeningen",c:"Motion",v:"Software Animatie",tools:"After Effects",img:["v:city","v:citroenen","v:kersen"],d:"Korte animaties in After Effects: lagen en parenting in een drukke stad, ritme met draaiende citroenschijfjes en easing met een stuiterend paar kersen."},
+{id:"museumnacht",t:"Museumnacht",c:"Grafisch ontwerp",v:"Software Illustratie · Vormen vervormen",tools:"Illustrator",img:["museumnacht-1"],d:"Affiche voor een museumnacht. Een zuil die wegsmelt in golvende lijnen, in donker bordeaux en crème."},
+{id:"bauhaus",t:"Bauhaus",c:"Editorial",v:"Design Skills · Evenwicht",tools:"InDesign",img:["bauhaus-2","bauhaus-4","bauhaus-6","bauhaus-8","bauhaus-10","bauhaus-11"],d:"Zes versies van dezelfde spread over 'form follows function'. Met dezelfde tekst en beelden zocht ik naar symmetrisch en asymmetrisch evenwicht."},
+{id:"double",t:"Double exposure",c:"Fotobewerking",v:"Software Photo",tools:"Photoshop",img:["double-exposure"],d:"Een profiel waarin een bos en een zwerm vogels opgaan, in één koele kleurtoon."},
+{id:"contrast",t:"Spelen met contrast",c:"Grafisch ontwerp",v:"Design Skills · Contrast",tools:"Illustrator",img:["contrast-1","contrast-2","contrast-3","contrast-4"],d:"Vier composities waarin ik telkens een ander contrast opzoek: groot en klein, licht en donker, vorm tegen vorm en letters die het vlak breken."},
+{id:"studyspot",t:"Studyspot",c:"UX/UI",v:"UX Skills",tools:"Figma",img:["studyspot-cover","studyspot-1","studyspot-2"],d:"Een app-concept waarmee studenten een rustige studieplek reserveren. Van user journey naar wireframes en een uitgewerkt scherm met inloggen en zoeken."},
+{id:"eigen",t:"Eigen creatie",c:"Fotobewerking",v:"Software Photo · Laagmaskers",tools:"Photoshop",img:["eigen-creatie"],d:"Een surrealistische scène rond tijd: een wekker als vogelkooi, krantenpapier en handen die uit het beeld reiken."},
+{id:"pottery",t:"Pottery workshop",c:"Grafisch ontwerp",v:"Design Skills · Hiërarchie",tools:"",img:["pottery-1"],d:"Affiche voor een pottenbakworkshop. Witte vazen op wit, met een duidelijke volgorde: eerst de titel, dan wanneer en waar."},
+{id:"ruimte",t:"Dino op Mars",c:"Fotobewerking",v:"Software Photo · Laagmaskers",tools:"Photoshop",img:["ruimte-collage"],d:"Een speelse oefening in laagmaskers: een dinosaurus, een rode planeet en een astronaut op een maansikkel in één woestijnlandschap."},
+{id:"alma",t:"Alma & Studio Forma",c:"UX/UI",v:"UX Skills · Figma",tools:"Figma",img:["alma-1","alma-2"],d:"Twee kleine webontwerpen: een nieuwsbrief-pop-up voor Alma en een header voor de meubelwinkel Studio Forma."}
+];
+const CATS=["Alles","Grafisch ontwerp","Webdesign","Illustratie","Fotobewerking","Motion","Editorial","UX/UI"];
+const esc=s=>String(s).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+const isV=x=>x.startsWith("v:");const nm=x=>isV(x)?x.slice(2):x;
+const still=matchMedia("(prefers-reduced-motion: reduce)").matches;
+const grid=document.getElementById("grid"),fl=document.getElementById("filters");
+fl.innerHTML=CATS.map((c,i)=>`<li><button type="button" data-c="${esc(c)}" aria-pressed="${i==0}">${esc(c)}</button></li>`).join("");
+grid.innerHTML=P.map((p,i)=>{const f=p.img[0];const v=isV(f);
+ const media=v?(still?`<img src="assets/img/${nm(f)}-poster.jpg" alt="" loading="lazy">`:`<video src="assets/video/${nm(f)}.mp4" poster="assets/img/${nm(f)}-poster.jpg" muted loop autoplay playsinline></video>`):`<img src="assets/thumb/${f}.jpg" alt="${esc(p.t)}" loading="lazy">`;
+ return `<button class="card" type="button" data-i="${i}" data-c="${esc(p.c)}"><div class="img">${media}${p.img.length>1?`<span class="n">${p.img.length} beelden</span>`:""}${p.img.some(isV)?`<span class="play">▶ video</span>`:""}${p.url?`<span class="play">● live website</span>`:""}</div><h3>${esc(p.t)}</h3><div class="meta">${esc(p.c)} · ${esc(p.v)}</div></button>`}).join("");
+fl.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+ fl.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+ const c=b.dataset.c;grid.querySelectorAll(".card").forEach(k=>k.hidden=!(c=="Alles"||k.dataset.c==c));});
+const dlg=document.getElementById("lb"),sl=document.getElementById("slides"),cnt=document.getElementById("cnt");
+let n=0;
+const upd=()=>{const i=Math.round(sl.scrollLeft/Math.max(1,sl.clientWidth));cnt.textContent=n>1?`${i+1} / ${n}`:"";};
+grid.addEventListener("click",e=>{const k=e.target.closest(".card");if(!k)return;const p=P[+k.dataset.i];n=p.img.length;
+ sl.innerHTML=p.img.map(x=>`<div>${isV(x)?`<video src="assets/video/${nm(x)}.mp4" poster="assets/img/${nm(x)}-poster.jpg" controls muted loop playsinline ${still?"":"autoplay"}></video>`:`<img src="assets/img/${x}.jpg" alt="${esc(p.t)}">`}</div>`).join("");
+ document.getElementById("lb-t").textContent=p.t;document.getElementById("lb-c").textContent=p.c;document.getElementById("lb-d").textContent=p.d;
+ document.getElementById("lb-m").innerHTML=`<dt>Vak</dt><dd>${esc(p.v)}</dd>${p.tools?`<dt>Tools</dt><dd>${esc(p.tools)}</dd>`:""}<dt>Jaar</dt><dd>2026</dd>`;
+ const lk=document.getElementById("lb-l");lk.hidden=!p.url;if(p.url){lk.href=p.url;}
+ document.getElementById("prev").hidden=document.getElementById("next").hidden=n<2;
+ dlg.showModal();sl.scrollLeft=0;upd();});
+const go=d=>sl.scrollTo({left:sl.scrollLeft+d*sl.clientWidth,behavior:still?"auto":"smooth"});
+document.getElementById("prev").onclick=()=>go(-1);document.getElementById("next").onclick=()=>go(1);
+document.getElementById("close").onclick=()=>dlg.close();
+sl.addEventListener("scroll",upd,{passive:true});
+dlg.addEventListener("keydown",e=>{if(e.key=="ArrowRight")go(1);if(e.key=="ArrowLeft")go(-1);});
+dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close();});
+dlg.addEventListener("close",()=>{sl.innerHTML="";});
+}
+</script>
+</body>
+</html>
